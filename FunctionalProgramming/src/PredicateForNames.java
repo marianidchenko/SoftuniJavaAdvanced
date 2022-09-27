@@ -11,7 +11,6 @@ public class PredicateForNames {
             if (predicate.test(name, n)) {
                 System.out.println(name);
             }
-
         }
     }
 }
