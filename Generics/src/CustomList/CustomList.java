@@ -42,6 +42,13 @@ public class CustomList<T extends Comparable>{
         return this.values.stream().min(T::compareTo).get();
     }
 
+    public List<T> getValues() {
+        return values;
+    }
+
+    public void setValues(List<T> values) {
+        this.values = values;
+    }
 
     @Override
     public String toString() {

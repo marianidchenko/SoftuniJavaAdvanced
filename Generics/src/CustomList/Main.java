@@ -36,6 +36,9 @@ public class Main {
                 case "Print":
                     System.out.println(customList);
                     break;
+                case "Sort":
+                    Sorter.sort(customList);
+                    break;
                 default:
                     break;
             }
