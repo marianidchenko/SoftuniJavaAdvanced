@@ -31,6 +31,10 @@ public class Main {
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
+                    break;
+                case "PrintAll":
+                    iterator.printAll();
+                    break;
             }
             command = scanner.nextLine();
         }

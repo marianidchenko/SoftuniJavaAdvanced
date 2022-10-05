@@ -24,6 +24,10 @@ public class ListyIterator {
         return this.index < this.data.size()-1;
     }
 
+    public void printAll() {
+        System.out.println(String.join(" ", this.data));
+    }
+
     @Override
     public String toString() {
         try {
