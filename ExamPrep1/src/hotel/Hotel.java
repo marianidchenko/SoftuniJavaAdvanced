@@ -58,7 +58,7 @@ public class Hotel {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("The people in the hotel %s are:\n", this.name));
         for (Person p: this.roster) {
-            sb.append(p.toString() + "\n");
+            sb.append(p.toString()).append("\n");
         }
         return sb.toString();
     }
