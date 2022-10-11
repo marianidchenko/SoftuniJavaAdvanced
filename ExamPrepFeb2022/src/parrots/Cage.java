@@ -51,7 +51,7 @@ public class Cage {
 
     public String report() {
         String result = String.format("Parrots available at %s:\n", name);
-        List<Parrot> parrots = data.stream().filter(p -> p.isAvailable()).collect(Collectors.toList());
+        List<Parrot> parrots = data.stream().filter(Parrot::isAvailable).collect(Collectors.toList());
         for (Parrot parrot : parrots) {
             result += parrot.toString() +"\n";
         }
