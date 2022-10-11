@@ -9,6 +9,7 @@ public class PawnWars {
         int bX = 0;
         int bY = 0;
         boolean oddTurn = true;
+
         for (int i = 0; i < 8; i++) {
             String input = scanner.nextLine();
             board[i] = input.split("");
@@ -21,6 +22,7 @@ public class PawnWars {
                 bY = input.indexOf("b");
             }
         }
+
         while (true) {
             if (oddTurn) {
                 board[wX][wY] = "-";
@@ -66,9 +68,23 @@ public class PawnWars {
     public static boolean canTake(int x, int y, String color, String[][] board) {
         try {
             if (color.equals("White")) {
-                return (board[x - 1][y - 1].equals("b") || board[x - 1][y + 1].equals("b"));
+                if (y - 1 < 0) {
+                    return (board[x - 1][y + 1].equals("b"));
+                }
+                if (y + 1 == 8) {
+                    return (board[x - 1][y - 1].equals("b"));
+                }
+                return (board[x + 1][y - 1].equals("b") || board[x - 1][y + 1].equals("b"));
             }
-            return (board[x + 1][y - 1].equals("w") || board[x + 1][y + 1].equals("w"));
+            else {
+                if (y - 1 < 0) {
+                    return (board[x + 1][y + 1].equals("w"));
+                }
+                if (y + 1 == 8) {
+                    return (board[x + 1][y - 1].equals("w"));
+                }
+                return (board[x + 1][y - 1].equals("w") || board[x - 1][y + 1].equals("w"));
+            }
         } catch (Exception e) {
             return false;
         }
